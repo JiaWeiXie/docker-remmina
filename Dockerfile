@@ -27,7 +27,8 @@ RUN \
     remmina-plugin-www \
     remmina-plugin-x2go \
     locales \
-    locales-all && \
+    locales-all \
+    fonts-noto && \
   echo "**** cleanup ****" && \
   apt-get clean && \
   rm -rf \

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 IMAGE='remmina'
 META_TAG='dev'
 

@@ -25,13 +25,20 @@ RUN \
     remmina-plugin-spice \
     remmina-plugin-vnc \
     remmina-plugin-www \
-    remmina-plugin-x2go && \
+    remmina-plugin-x2go \
+    locales \
+    locales-all \
+    fonts-noto && \
   echo "**** cleanup ****" && \
   apt-get clean && \
   rm -rf \
     /tmp/* \
     /var/lib/apt/lists/* \
     /var/tmp/*
+
+RUN locale-gen zh_TW.UTF-8 && update-locale LANG="zh_TW.UTF-8" LANGUAGE="zh_TW"
+ENV LANG zh_TW.UTF-8
+ENV LANGUAGE zh_TW
 
 # add local files
 COPY /root /
